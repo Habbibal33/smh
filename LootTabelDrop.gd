@@ -1,3 +1,4 @@
+#TEMP 
 extends Node2D
 
 var IC := preload("res://library/items/ItemCreator.gd").new()
@@ -5,13 +6,6 @@ var items: Array = []
 
 
 func _ready():
-#	items.append(IC.create_item("Sword", "weapon", r()))
-#	items.append(IC.create_item("Shield", "shield", r()))
-#	items.append(IC.create_item("Elixir of Life", "elixir", r()))
-#	items.append(IC.create_item("Elixir of Mana", "exilir", r()))
-#	items.append(IC.create_item("Helmet", "equip", r()))
-#	items.append(IC.create_item("Ring", "acc", r()))
-	
 	items.append(IC.create_item("Sword", "weapon", 1))
 	items.append(IC.create_item("Shield", "shield", 2))
 	items.append(IC.create_item("Elixir of Life", "elixir", 3))
@@ -47,6 +41,7 @@ func drop(item_array: Array):
 				if move_point < item_array.size():
 					last_weight += item_array[move_point]._weight
 					move_point +=1 
+					
 	return result
 	
 
