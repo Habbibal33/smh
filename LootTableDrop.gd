@@ -29,7 +29,7 @@ func drop(item_array: Array):
 	var move_point = 0 
 	
 	for i in item_array.size():
-		max_roll = item_array[i]._weight
+		max_roll += item_array[i]._weight
 		
 	var roll = round(rand_range(min_roll, max_roll))
 	
@@ -38,9 +38,8 @@ func drop(item_array: Array):
 			if roll >= last_weight and roll <= last_weight + item_array[move_point]._weight:
 				result = item_array[move_point]
 			else:
-				if move_point < item_array.size():
-					last_weight += item_array[move_point]._weight
-					move_point +=1 
+				last_weight += item_array[move_point]._weight
+				move_point +=1 
 					
 	return result
 	
